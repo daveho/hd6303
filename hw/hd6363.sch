@@ -455,6 +455,100 @@ F 3 "" H 9650 1850 50  0001 C CNN
 $EndComp
 Text Label 8650 1050 0    60   ~ 0
 -E
+Text Label 8750 1950 0    60   ~ 0
+-R/W
+Text Label 10300 1850 0    60   ~ 0
+-RMEM
+Text Notes 7800 700  0    60   ~ 0
+Memory-mapped I/O read/write signals
+Text Notes 5100 700  0    60   ~ 0
+CPU
+Text Notes 1550 900  0    60   ~ 0
+Clock and reset
+Text Notes 2050 4400 0    60   ~ 0
+ROM enable and ROM
+Text Notes 2000 7000 0    60   ~ 0
+RAM enable and RAM
+$Comp
+L 74LS32 U5
+U 4 1 5A95ED60
+P 7500 4150
+F 0 "U5" H 7500 4200 50  0000 C CNN
+F 1 "74HCT32" H 7500 4100 50  0000 C CNN
+F 2 "" H 7500 4150 50  0001 C CNN
+F 3 "" H 7500 4150 50  0001 C CNN
+	4    7500 4150
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74LS138 U8
+U 1 1 5A95EDE5
+P 9150 3600
+F 0 "U8" H 9250 4100 50  0000 C CNN
+F 1 "74HCT138" H 9300 3051 50  0000 C CNN
+F 2 "" H 9150 3600 50  0001 C CNN
+F 3 "" H 9150 3600 50  0001 C CNN
+	1    9150 3600
+	1    0    0    -1  
+$EndComp
+Text Notes 7850 2900 0    60   ~ 0
+I/O space decoding ($1000-$2000)
+Text Label 6550 4050 0    60   ~ 0
+A14
+Text Label 6550 4250 0    60   ~ 0
+A15
+Text Label 6550 3850 0    60   ~ 0
+A13
+Text Label 6550 3750 0    60   ~ 0
+A12
+Text Label 8150 3250 0    60   ~ 0
+A9
+Text Label 8150 3350 0    60   ~ 0
+A10
+Text Label 8150 3450 0    60   ~ 0
+A11
+Text Label 9900 3250 0    60   ~ 0
+-IOEN0
+Text Label 9900 3350 0    60   ~ 0
+-IOEN1
+Text Label 9900 3450 0    60   ~ 0
+-IOEN2
+Text Label 9900 3550 0    60   ~ 0
+-IOEN3
+Text Label 9900 3650 0    60   ~ 0
+-IOEN4
+Text Label 9900 3750 0    60   ~ 0
+-IOEN5
+Text Label 9900 3850 0    60   ~ 0
+-IOEN6
+Text Label 9900 3950 0    60   ~ 0
+-IOEN7
+Text Notes 6800 4850 0    60   ~ 0
+Output port
+$Comp
+L 74LS374 U9
+U 1 1 5A960902
+P 7100 5500
+F 0 "U9" H 7100 5500 50  0000 C CNN
+F 1 "74LS374" H 7150 5150 50  0000 C CNN
+F 2 "" H 7100 5500 50  0001 C CNN
+F 3 "" H 7100 5500 50  0001 C CNN
+	1    7100 5500
+	1    0    0    -1  
+$EndComp
+Text Label 5900 5900 0    60   ~ 0
+-IOEN0
+$Comp
+L GND #PWR?
+U 1 1 5A960B60
+P 6150 6200
+F 0 "#PWR?" H 6150 5950 50  0001 C CNN
+F 1 "GND" H 6150 6050 50  0000 C CNN
+F 2 "" H 6150 6200 50  0001 C CNN
+F 3 "" H 6150 6200 50  0001 C CNN
+	1    6150 6200
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
 	4500 1250 2550 1250
 Wire Wire Line
@@ -724,88 +818,36 @@ Wire Wire Line
 Connection ~ 7350 1950
 Wire Wire Line
 	8700 1950 9050 1950
-Text Label 8750 1950 0    60   ~ 0
--R/W
 Wire Wire Line
 	10250 1850 10700 1850
-Text Label 10300 1850 0    60   ~ 0
--RMEM
-Text Notes 7800 700  0    60   ~ 0
-Memory-mapped I/O read/write signals
 Wire Wire Line
 	6800 1250 6800 1350
-Text Notes 5100 700  0    60   ~ 0
-CPU
-Text Notes 1550 900  0    60   ~ 0
-Clock and reset
-Text Notes 2050 4400 0    60   ~ 0
-ROM enable and ROM
 Wire Wire Line
 	3450 7500 5300 7500
 Wire Wire Line
 	5300 7500 5300 6800
 Wire Wire Line
 	5300 6800 4800 6800
-Text Notes 2000 7000 0    60   ~ 0
-RAM enable and RAM
-$Comp
-L 74LS32 U5
-U 4 1 5A95ED60
-P 7500 4150
-F 0 "U5" H 7500 4200 50  0000 C CNN
-F 1 "74HCT32" H 7500 4100 50  0000 C CNN
-F 2 "" H 7500 4150 50  0001 C CNN
-F 3 "" H 7500 4150 50  0001 C CNN
-	4    7500 4150
-	1    0    0    -1  
-$EndComp
-$Comp
-L 74LS138 U8
-U 1 1 5A95EDE5
-P 9150 3600
-F 0 "U8" H 9250 4100 50  0000 C CNN
-F 1 "74HCT138" H 9300 3051 50  0000 C CNN
-F 2 "" H 9150 3600 50  0001 C CNN
-F 3 "" H 9150 3600 50  0001 C CNN
-	1    9150 3600
-	1    0    0    -1  
-$EndComp
-Text Notes 7850 2900 0    60   ~ 0
-I/O space decoding ($1000-$2000)
 Wire Wire Line
 	8350 4150 8100 4150
 Wire Wire Line
 	6900 4050 6500 4050
 Wire Wire Line
 	6900 4250 6500 4250
-Text Label 6550 4050 0    60   ~ 0
-A14
-Text Label 6550 4250 0    60   ~ 0
-A15
 Wire Wire Line
 	6500 3850 8550 3850
-Text Label 6550 3850 0    60   ~ 0
-A13
 Wire Wire Line
 	8550 3950 8350 3950
 Wire Wire Line
 	8350 3950 8350 4150
 Wire Wire Line
 	8550 3750 6500 3750
-Text Label 6550 3750 0    60   ~ 0
-A12
 Wire Wire Line
 	8550 3250 8100 3250
 Wire Wire Line
 	8550 3350 8100 3350
 Wire Wire Line
 	8550 3450 8100 3450
-Text Label 8150 3250 0    60   ~ 0
-A9
-Text Label 8150 3350 0    60   ~ 0
-A10
-Text Label 8150 3450 0    60   ~ 0
-A11
 Wire Wire Line
 	9750 3250 10300 3250
 Wire Wire Line
@@ -822,20 +864,106 @@ Wire Wire Line
 	9750 3850 10300 3850
 Wire Wire Line
 	9750 3950 10300 3950
-Text Label 9900 3250 0    60   ~ 0
--IOEN0
-Text Label 9900 3350 0    60   ~ 0
--IOEN1
-Text Label 9900 3450 0    60   ~ 0
--IOEN2
-Text Label 9900 3550 0    60   ~ 0
--IOEN3
-Text Label 9900 3650 0    60   ~ 0
--IOEN4
-Text Label 9900 3750 0    60   ~ 0
--IOEN5
-Text Label 9900 3850 0    60   ~ 0
--IOEN6
-Text Label 9900 3950 0    60   ~ 0
--IOEN7
+Wire Wire Line
+	6400 5900 5850 5900
+Wire Wire Line
+	6400 6000 6150 6000
+Wire Wire Line
+	6150 6000 6150 6200
+Wire Wire Line
+	6400 5000 5900 5000
+Wire Wire Line
+	6400 5100 5900 5100
+Wire Wire Line
+	6400 5200 5900 5200
+Wire Wire Line
+	6400 5300 5900 5300
+Wire Wire Line
+	6400 5400 5900 5400
+Wire Wire Line
+	6400 5500 5900 5500
+Wire Wire Line
+	6400 5600 5900 5600
+Wire Wire Line
+	6400 5700 5900 5700
+Text Label 6000 5000 0    60   ~ 0
+D0
+Text Label 6000 5100 0    60   ~ 0
+D1
+Text Label 6000 5200 0    60   ~ 0
+D2
+Text Label 6000 5300 0    60   ~ 0
+D3
+Text Label 6000 5400 0    60   ~ 0
+D4
+Text Label 6000 5500 0    60   ~ 0
+D5
+Text Label 6000 5600 0    60   ~ 0
+D6
+Text Label 6000 5700 0    60   ~ 0
+D7
+Wire Wire Line
+	7800 5000 8300 5000
+Wire Wire Line
+	7800 5100 8300 5100
+Wire Wire Line
+	7800 5200 8300 5200
+Wire Wire Line
+	7800 5300 8300 5300
+Wire Wire Line
+	7800 5400 8300 5400
+Wire Wire Line
+	7800 5500 8300 5500
+Wire Wire Line
+	7800 5600 8300 5600
+Wire Wire Line
+	7800 5700 8300 5700
+Text Label 7950 5000 0    60   ~ 0
+OUTP0
+Text Label 7950 5100 0    60   ~ 0
+OUTP1
+Text Label 7950 5200 0    60   ~ 0
+OUTP2
+Text Label 7950 5300 0    60   ~ 0
+OUTP3
+Text Label 7950 5400 0    60   ~ 0
+OUTP4
+Text Label 7950 5500 0    60   ~ 0
+OUTP5
+Text Label 7950 5600 0    60   ~ 0
+OUTP6
+Text Label 7950 5700 0    60   ~ 0
+OUTP7
+Wire Wire Line
+	5050 3400 5450 3400
+Wire Wire Line
+	5050 3500 5450 3500
+Wire Wire Line
+	5050 3600 5450 3600
+Wire Wire Line
+	5050 3700 5450 3700
+Wire Wire Line
+	5050 3800 5450 3800
+Wire Wire Line
+	5050 3900 5450 3900
+Wire Wire Line
+	5050 4000 5450 4000
+Wire Wire Line
+	5050 4100 5450 4100
+Text Label 5250 3400 0    60   ~ 0
+D0
+Text Label 5250 3500 0    60   ~ 0
+D1
+Text Label 5250 3600 0    60   ~ 0
+D2
+Text Label 5250 3700 0    60   ~ 0
+D3
+Text Label 5250 3800 0    60   ~ 0
+D4
+Text Label 5250 3900 0    60   ~ 0
+D5
+Text Label 5250 4000 0    60   ~ 0
+D6
+Text Label 5250 4100 0    60   ~ 0
+D7
 $EndSCHEMATC
