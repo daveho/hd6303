@@ -554,21 +554,11 @@ Wire Wire Line
 Wire Wire Line
 	1250 1250 900  1250
 Wire Wire Line
-	900  1000 900  1250
-Wire Wire Line
-	900  1250 900  1550
-Wire Wire Line
-	900  1550 900  2200
+	900  1000 900  2200
 Wire Wire Line
 	1250 1350 800  1350
 Wire Wire Line
-	800  1350 800  2300
-Wire Wire Line
-	800  2300 800  2500
-Wire Wire Line
-	800  2500 800  2650
-Wire Wire Line
-	800  2650 800  2750
+	800  1350 800  2750
 Wire Wire Line
 	4500 1050 4400 1050
 Wire Wire Line
@@ -673,9 +663,7 @@ Wire Wire Line
 Wire Wire Line
 	3800 2500 3800 2450
 Wire Wire Line
-	3600 2500 3700 2500
-Wire Wire Line
-	3700 2500 3800 2500
+	3600 2500 3800 2500
 Wire Wire Line
 	3700 2500 3700 2550
 Wire Wire Line
@@ -738,9 +726,7 @@ Wire Wire Line
 Wire Wire Line
 	1150 4650 1000 4650
 Wire Wire Line
-	1000 4650 1000 4750
-Wire Wire Line
-	1000 4750 1000 4850
+	1000 4650 1000 4850
 Wire Wire Line
 	1000 4750 650  4750
 Wire Wire Line
@@ -787,15 +773,11 @@ Wire Wire Line
 Wire Wire Line
 	3650 4800 3300 4800
 Wire Wire Line
-	8350 1050 8650 1050
-Wire Wire Line
-	8650 1050 8850 1050
+	8350 1050 8850 1050
 Wire Wire Line
 	7150 950  7000 950 
 Wire Wire Line
-	7000 950  7000 1050
-Wire Wire Line
-	7000 1050 7000 1150
+	7000 950  7000 1150
 Wire Wire Line
 	6000 1050 7000 1050
 Wire Wire Line
@@ -806,9 +788,7 @@ Wire Wire Line
 Wire Wire Line
 	8350 1250 8350 1350
 Wire Wire Line
-	8350 1350 6900 1350
-Wire Wire Line
-	6900 1350 6800 1350
+	8350 1350 6800 1350
 Wire Wire Line
 	6000 1250 6800 1250
 Wire Wire Line
@@ -827,9 +807,7 @@ Connection ~ 8650 1050
 Wire Wire Line
 	7300 1850 7150 1850
 Wire Wire Line
-	7150 1850 7150 1950
-Wire Wire Line
-	7150 1950 7150 2050
+	7150 1850 7150 2050
 Wire Wire Line
 	7150 1950 6900 1950
 Wire Wire Line
@@ -990,4 +968,60 @@ Text Label 5250 4100 0    60   ~ 0
 D7
 Text Notes 6450 6950 0    60   ~ 0
 HD6303 microcomputer
+$Comp
+L R R4
+U 1 1 5A98743B
+P 3650 950
+F 0 "R4" V 3730 950 50  0000 C CNN
+F 1 "10K" V 3650 950 50  0000 C CNN
+F 2 "" V 3580 950 50  0001 C CNN
+F 3 "" H 3650 950 50  0001 C CNN
+	1    3650 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R5
+U 1 1 5A98748A
+P 3400 950
+F 0 "R5" H 3480 950 50  0000 C CNN
+F 1 "10K" V 3400 950 50  0000 C CNN
+F 2 "" V 3330 950 50  0001 C CNN
+F 3 "" H 3400 950 50  0001 C CNN
+	1    3400 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R6
+U 1 1 5A9874C9
+P 3150 950
+F 0 "R6" V 3230 950 50  0000 C CNN
+F 1 "10K" V 3150 950 50  0000 C CNN
+F 2 "" V 3080 950 50  0001 C CNN
+F 3 "" H 3150 950 50  0001 C CNN
+	1    3150 950 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4500 1350 3650 1350
+Wire Wire Line
+	3650 1350 3650 1100
+Wire Wire Line
+	4500 1450 3400 1450
+Wire Wire Line
+	3400 1450 3400 1100
+Wire Wire Line
+	4500 1650 3150 1650
+Wire Wire Line
+	3150 1650 3150 1100
+Wire Wire Line
+	3650 800  3650 750 
+Wire Wire Line
+	3150 750  3900 750 
+Connection ~ 3900 750 
+Wire Wire Line
+	3400 800  3400 750 
+Connection ~ 3650 750 
+Wire Wire Line
+	3150 800  3150 750 
+Connection ~ 3400 750 
 $EndSCHEMATC
