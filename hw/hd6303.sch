@@ -33,7 +33,7 @@ LIBS:contrib
 LIBS:valves
 LIBS:HD6303RP
 LIBS:ya68k
-LIBS:hd6363-cache
+LIBS:hd6303-cache
 EELAYER 25 0
 EELAYER END
 $Descr USLetter 11000 8500
