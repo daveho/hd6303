@@ -28,8 +28,8 @@ NC NIOEN3 NIOEN2 NIOEN1 NIOEN0 NRAMEN NROMEN NWMEM NRMEM VCC
 ;; Basically, any access where A15 is high and (at least one of)
 ;; A14, A13, or A12 are high goes to the ROM.
 /NROMEN = A15 * A14
-        + A15 * /A14 * A13
-        + A15 * /A14 * /A13 * A12
+        + A15 * A13
+        + A15 * A12
 
 ;; RAM chip enable: asserted for addresses $0000-7FFF
 ;; (i.e., the low 32K of the address space).
