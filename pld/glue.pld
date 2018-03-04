@@ -1,0 +1,59 @@
+GAL16V8
+glue
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Pin names
+;; The "N" prefix on a pin name indicates a negated
+;; (active low) output (except for "NC" pins, which
+;; are unconnected)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+CLK E RW A10 A11 A12 A13 A14 A15 GND
+NC NIOEN3 NIOEN2 NIOEN1 NIOEN0 NRAMEN NROMEN NWMEM NRMEM VCC
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Logic equations
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Memory-mapped read signal: asserted when E and R/-W are high
+/NRMEM = E * RW
+
+;; Memory-mapped write signal: asserted when E is high and
+;; R/-W is low
+/NWMEM = E * /RW
+
+;; ROM chip enable: asserted for addresses $9000-$FFFF
+;; (i.e., all but the low 4K of the upper 32K of the address space).
+;; Basically, any access where A15 is high and (at least one of)
+;; A14, A13, or A12 are high goes to the ROM.
+/NROMEN = A15 * A14
+        + A15 * /A14 * A13
+        + A15 * /A14 * /A13 * A12
+
+;; RAM chip enable: asserted for addresses $0000-7FFF
+;; (i.e., the low 32K of the address space).
+;; Some addresses in this range map to the HD6303's internal
+;; registers and RAM.
+/NRAMEN = /A15
+
+;; I/O area 0 ($8000-$83FF) enable
+/NIOEN0 = A15 * /A14 * /A13 * /A12 * /A11 * /A10
+
+;; I/O area 1 ($8400-$87FF) enable
+/NIOEN1 = A15 * /A14 * /A13 * /A12 * /A11 * A10
+
+;; I/O area 2 ($8800-$8BFF) enable
+/NIOEN2 = A15 * /A14 * /A13 * /A12 * A11 * /A10
+
+;; I/O area 3 ($8C00-$9000) enable
+/NIOEN3 = A15 * /A14 * /A13 * /A12 * A11 * A10
+
+
+
+DESCRIPTION
+
+HD6303 microcomputer glue logic
+
+
+; vim:syntax=off:
