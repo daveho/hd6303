@@ -9,8 +9,8 @@ PORT2_OUT equ $0003
 	org $E000
 
 main subroutine
-	;; Locate stack in middle of internal RAM
-	lds #$00C0
+	;; Locate stack at top of internal RAM
+	lds #$00FF
 
 	;; Configure pins P23 and P24 for output
 	ldaa #$18
@@ -31,77 +31,16 @@ main subroutine
 
 
 delay subroutine
-	ldab #$00
+	ldx #$0000
 .1
 	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	incb
-	cmpb #$ff
+	inx
+	cpx #$ffff
 	bne .1
 	rts
 
 ;; PC for reset vector
 	org $FFFE
 	dc.w #$E000
+
+;; vim:ft=asm6303:
