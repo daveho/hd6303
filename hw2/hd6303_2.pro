@@ -1,4 +1,4 @@
-update=Sun 04 Mar 2018 08:06:50 AM EST
+update=Sun 04 Mar 2018 03:26:13 PM EST
 version=1
 last_client=kicad
 [pcbnew]
@@ -64,3 +64,13 @@ LibName32=valves
 LibName33=HD6303RP
 LibName34=ya68k
 LibName35=GAL16V8
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
