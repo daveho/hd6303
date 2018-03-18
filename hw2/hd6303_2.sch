@@ -733,12 +733,12 @@ Text Label 3350 6700 0    60   ~ 0
 $Comp
 L VCC #PWR014
 U 1 1 5AADC39D
-P 2950 6900
-F 0 "#PWR014" H 2950 6750 50  0001 C CNN
-F 1 "VCC" H 2950 7050 50  0000 C CNN
-F 2 "" H 2950 6900 50  0001 C CNN
-F 3 "" H 2950 6900 50  0001 C CNN
-	1    2950 6900
+P 2950 7050
+F 0 "#PWR014" H 2950 6900 50  0001 C CNN
+F 1 "VCC" H 2950 7200 50  0000 C CNN
+F 2 "" H 2950 7050 50  0001 C CNN
+F 3 "" H 2950 7050 50  0001 C CNN
+	1    2950 7050
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1175,8 +1175,6 @@ Wire Wire Line
 Wire Wire Line
 	3300 6700 3800 6700
 Wire Wire Line
-	2950 7200 3800 7200
-Wire Wire Line
 	2950 7300 3800 7300
 Wire Wire Line
 	4300 7200 5100 7200
@@ -1187,8 +1185,7 @@ Wire Wire Line
 Wire Wire Line
 	5100 7500 4300 7500
 Wire Wire Line
-	2950 6900 2950 7500
-Connection ~ 2950 7200
+	2950 7050 2950 7500
 Connection ~ 2950 7300
 Connection ~ 2950 7400
 $Comp
@@ -1306,4 +1303,10 @@ F 3 "" H 1050 6750 50  0001 C CNN
 $EndComp
 Text Notes 1200 6300 0    60   ~ 0
 Power connection (+5V)
+Wire Wire Line
+	3800 7200 3300 7200
+Text Label 3350 7200 0    60   ~ 0
+-RES
+Text Label 4300 1550 0    60   ~ 0
+-RES
 $EndSCHEMATC
