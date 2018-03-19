@@ -28,7 +28,13 @@ You'll need [dasm](http://dasm-dillon.sourceforge.net/).  The resulting image, `
 
 ## Improved circuit
 
-The improved circuit has a 32K static RAM (62256 or similar) and a 64K flash ROM (SST27SF), only 28K of which is used.  The memory map is
+The improved circuit has a 32K static RAM (62256 or similar) and a 64K flash ROM (SST27SF), only 28K of which is used.
+
+![Improved circuit](img/hw2.jpg)
+
+The test program [blink2.asm](fw/blink2.asm) blinks LEDs connected to P23 and P24 (same as the minimal circuit.)  Note that the ULN2003A transistor array isn't shown in the schematic, but it's connected the same way as in the minimal circuit.
+
+The memory map is
 
 ```
 $0000-$7FFF   static RAM (except low 256 bytes shadowed by internal registers/RAM)
