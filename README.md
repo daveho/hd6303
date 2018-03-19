@@ -21,7 +21,7 @@ The minimal circuit has a single 27C64 EPROM, and controls two LEDs using pins P
 The test program [blink\_min.asm](fw/blink_min.asm) blinks the LEDs.  Build it using the command
 
 ```bash
-make blink_min.asm
+make blink_min.bin
 ```
 
 You'll need [dasm](http://dasm-dillon.sourceforge.net/).  The resulting image, `blink_min.bin`, can be burned into an 27C64 EPROM.  I use the Minipro TL866CS, which works very nicely under Linux using Wine.
@@ -32,7 +32,13 @@ The improved circuit has a 32K static RAM (62256 or similar) and a 64K flash ROM
 
 ![Improved circuit](img/hw2.jpg)
 
-The test program [blink2.asm](fw/blink2.asm) blinks LEDs connected to P23 and P24 (same as the minimal circuit.)  Note that the ULN2003A transistor array isn't shown in the schematic, but it's connected the same way as in the minimal circuit.
+The test program [blink2.asm](fw/blink2.asm) blinks LEDs connected to P23 and P24 (same as the minimal circuit.)  Note that the ULN2003A transistor array isn't shown in the schematic, but it's connected the same way as in the minimal circuit.  Build the test program using the command
+
+```
+make blink2.bin
+```
+
+and burn the resulting image into a 27C512 EPROM, SST27SF512 flash ROM, or similar.
 
 The memory map is
 
