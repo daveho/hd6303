@@ -1,0 +1,49 @@
+GAL16V8
+ay8913
+
+;; Control logic for AY-3-8913
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Pin names
+;; The "N" prefix on a pin name indicates a negated
+;; (active low) output (except for "NC" pins, which
+;; are unconnected)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+NRMEM NWMEM NAYEN A0 NC NC NC NC NC GND
+NC NC NC NC NC NC NC BC1 BDIR VCC
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Logic equations
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;: The basic idea is that BDIR and BC1 should be be 0
+;; when the AY-3-8913 is not being accessed, to ensure that
+;; the data/address lines (DA0..DA7) are in a high
+;; impedence state.  When the AY-3-8913 is being accessed,
+;; the BDIR and BC1 signals need to be generated as
+;; described in the datasheet.
+
+;; -RMEM -WMEM -AYEN    A0  BDIR  BC1
+;; -----------------------------------
+;;     1     1     X     X     0    0
+;;     X     X     1     X     0    0
+;;     0     X     0     0     0    1     read data
+;;     X     0     0     0     1    0     write data
+;;     X     0     0     1     1    1     write address
+
+;; The logic in the table above allows reading or writing
+;; AY data at bus address BASE+0, and writing an AY address at
+;; bus address BASE+1, where BASE is the address associated
+;; with the chip enable signal -AYEN.  (Reading from bus
+;; address BASE+1 doesn't do anything.)
+
+BDIR = /NWMEM * /NAYEN
+
+BC1 = /NRMEM * /NAYEN * /A0
+    + /NWMEM * /NAYEN * A0
+
+DESCRIPTION
+
+Control logic for AY-3-8913
+
+; vim:syntax=off:
