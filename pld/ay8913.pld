@@ -1,7 +1,7 @@
 GAL16V8
 ay8913
 
-;; Control logic for AY-3-8913
+;; Clock and control logic for AY-3-8913
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Pin names
@@ -9,8 +9,8 @@ ay8913
 ;; (active low) output (except for "NC" pins, which
 ;; are unconnected)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-NRMEM NWMEM NAYEN A0 NC NC NC NC NC GND
-NC NC NC NC NC NC NC BC1 BDIR VCC
+CLK NRMEM NWMEM NAYEN A0 NC NC NC NC GND
+NC AYCLK NC NC NC NC NC BC1 BDIR VCC
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Logic equations
@@ -42,8 +42,13 @@ BDIR = /NWMEM * /NAYEN
 BC1 = /NRMEM * /NAYEN * /A0
     + /NWMEM * /NAYEN * A0
 
+;; Clock generation: divide the input 4 MHz clock signal by 2
+;; to produce a 2 MHz clock.  According to the datasheet,
+;; 2 MHz is the maximum clock rate.
+AYCLK.R = /AYCLK
+
 DESCRIPTION
 
-Control logic for AY-3-8913
+Clock and control logic for AY-3-8913
 
 ; vim:syntax=off:
