@@ -1,4 +1,4 @@
-update=Tue 20 Mar 2018 05:11:07 PM EDT
+update=Wed 21 Mar 2018 07:59:31 PM EDT
 version=1
 last_client=kicad
 [pcbnew]
@@ -63,3 +63,4 @@ LibName31=contrib
 LibName32=valves
 LibName33=AY-3-8913
 LibName34=GAL16V8
+LibName35=ya68k
