@@ -669,4 +669,12 @@ F 3 "" H 1100 7350 50  0001 C CNN
 	1    1100 7350
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	800  3900 1750 3900
+Text Label 850  3900 0    60   ~ 0
+-RST
+Wire Wire Line
+	8950 4650 9550 4650
+Text Label 9100 4650 0    60   ~ 0
+-RST
 $EndSCHEMATC
