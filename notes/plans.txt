@@ -1,0 +1,32 @@
+Video output:
+
+TMS9928 + VRAM (need to research VRAM options, maybe just use 62256 SRAM?)
+
+  Document describing interfacing TMS9918 with static RAM:
+    https://retrobrewcomputers.org/n8vem-pbwiki-archive/0/35845334/48860720/33053543/SRAM%20Replacement%20for%20TMS99x8%20VRAM.pdf
+    Suggests using a 32K cache RAM (62256 with 70ns access time)
+
+Circuit for converting YPbPr to RGB:
+
+  https://www.mikrocontroller.net/attachment/11797/rybyrgb.pdf
+
+The schematic indicates MC34182 op amps are used.  Ordered some
+MC34184 which are equivalent quad (rather than dual) op amp ICs.
+
+Generating composite video from RGB+sync, MC1377 (ordered 4):
+
+  http://www.smspower.org/uploads/Development/Motorola_MC1377.pdf
+
+Not sure what additional components the MC1377 needs, need to
+research.  Goal is to output video signal that can be displayed
+on a composite monitor or TV.
+
+
+
+Audio output: use either AY-3-8913 (have 3 of these, but they're somewhat
+expensive to source) or YM2149F (40 pin, would provide 2 I/O ports, and
+they're fairly cheap and easy to obtain.)  They require a max 2 MHz clock.
+The system clock (E) is 1.2288 MHz.  That would probably be the easiest
+approach.  Could also use additional 4 MHz oscillator and divide it by 2.
+Already have PLD (ay8913.pld) to generate appropriate bus signals and
+also divide an external clock.
