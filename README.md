@@ -12,7 +12,7 @@ Daniel Tufvesson's [MC3 project](http://www.waveguide.se/?article=mc3-a-diy-8-bi
 
 # Circuits
 
-So far, two successful circuits have been built and tested:
+So far, two circuits have been built and tested:
 
 * [Minimal circuit](minimal.md)
 * [Improved circuit](improved.md)
@@ -21,7 +21,7 @@ There is a PCB for the improved circuit:
 
 ![PCB image](img/pcb.jpg)
 
-The data bus, lowest 10 address lines, I/O pins, and other useful signals are available on a 40 pin header, alowing the circuit to be interfaced with other peripherals.
+The data bus, lowest 10 address lines, I/O pins, and other useful signals are available on a 40 pin header, allowing the circuit to be interfaced with other peripherals.
 
 # Future plans
 
