@@ -8,6 +8,8 @@ It's an 8 bit CPU that supports an extended version of the Motorola 6800 instruc
 
 Because it has some built-in peripherals (timer, UART) and 128 bytes of internal RAM, it could be considered a microcontroller.  However, it has no internal program memory, and code must be run from an external ROM.
 
+Daniel Tufvesson's [MC3 project](http://www.waveguide.se/?article=mc3-a-diy-8-bit-computer) was extremely useful as a reference for the HD6303 and how to interface with it.  The [HD6303 datasheet](http://www.cryptomuseum.com/crypto/philips/px1000/files/hd6303rp.pdf) was also very useful.
+
 # Circuits
 
 So far, two successful circuits have been built and tested:
