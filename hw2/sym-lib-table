@@ -1,0 +1,6 @@
+(sym_lib_table
+  (lib (name hd6303_2-rescue)(type Legacy)(uri ${KIPRJMOD}/hd6303_2-rescue.lib)(options "")(descr ""))
+  (lib (name HD6303RP)(type Legacy)(uri ${KIPRJMOD}/HD6303RP.lib)(options "")(descr ""))
+  (lib (name ya68k)(type Legacy)(uri ${KIPRJMOD}/ya68k.lib)(options "")(descr ""))
+  (lib (name GAL16V8)(type Legacy)(uri ${KIPRJMOD}/GAL16V8.lib)(options "")(descr ""))
+)
